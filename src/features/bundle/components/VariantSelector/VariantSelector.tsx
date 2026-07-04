@@ -16,8 +16,6 @@ export function VariantSelector({
     return null;
   }
 
-  console.log(variants);
-
   return (
     <div
       className="variant-selector"
@@ -32,10 +30,10 @@ export function VariantSelector({
           aria-pressed={variant.id === selectedVariantId}
           onClick={() => onSelect(variant.id)}
         >
-          {variant.image && (
+          {variant.swatch && (
             <img
               className="variant-swatch"
-              src={variant.image}
+              src={variant.swatch}
               alt=""
               width={20}
               height={20}

@@ -1,5 +1,5 @@
 import { useBundle } from "../../hooks/useBundle";
-import { getSelectedVariant } from "../../state/selectors";
+import { getSelectedVariant, hasSelectedVariants } from "../../state/selectors";
 import type { Product } from "../../types/bundle.types";
 import { Badge } from "../Badge/Badge";
 import { Price } from "../Price/Price";
@@ -14,10 +14,9 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const { dispatch } = useBundle();
   const activeVariant = getSelectedVariant(product);
-  const isSelected = activeVariant.quantity > 0;
+  const isSelected = hasSelectedVariants(product);
   const period = product.stepId === "plan" ? "mo" : undefined;
-  // const productImage = activeVariant.image ?? product.image;
-  const productImage = product.image;
+  const productImage = activeVariant.image ?? product.image;
 
   const handleSelectVariant = (variantId: string) => {
     dispatch({

@@ -12,13 +12,9 @@
   align-items: start;
 }
 
-@media (width >= 991px) and (width <= 1024px) {
+@media (width >= 991px) {
   .app-layout {
     grid-template-columns: 1fr 380px;
-  }
-
-  .review-panel {
-    order: 2;
   }
 }
 
