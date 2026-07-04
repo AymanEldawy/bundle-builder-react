@@ -12,7 +12,7 @@
   align-items: start;
 }
 
-@media (width >= 991px) {
+@media (width >= 991px) and (width <= 1024px) {
   .app-layout {
     grid-template-columns: 1fr 380px;
   }

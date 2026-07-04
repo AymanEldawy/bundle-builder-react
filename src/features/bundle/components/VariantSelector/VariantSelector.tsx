@@ -30,10 +30,10 @@ export function VariantSelector({
           aria-pressed={variant.id === selectedVariantId}
           onClick={() => onSelect(variant.id)}
         >
-          {variant.swatch && (
+          {variant.image && (
             <img
               className="variant-swatch"
-              src={variant.swatch}
+              src={variant.image}
               alt=""
               width={20}
               height={20}

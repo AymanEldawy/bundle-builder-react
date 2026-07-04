@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useCallback, useMemo } from "react";
 import { useBundle } from "../../hooks/useBundle";
 import { steps } from "../../state/initialState";
 import {
@@ -84,6 +84,11 @@ export function ReviewPanel() {
     >;
   }, []);
 
+  const saveSystem = useCallback(() => {
+    dispatch({ type: "SAVE" });
+    alert("System saved successfully!");
+  }, [dispatch]);
+
   return (
     <aside className="review-panel" aria-label="Your security system">
       <div className="review-left">
@@ -146,6 +151,13 @@ export function ReviewPanel() {
             width={84}
             height={84}
           />
+          <div className="guarantee-text">
+            <strong>30-day hassle-free returns</strong>
+            <p>
+              If you&apos;re not totally in love with the product, we will
+              refund you 100%.
+            </p>
+          </div>
           <div className="review-totals-right">
             <div className="review-financing">
               <span className="financing-pill">as low as ${financing}/mo</span>
@@ -173,11 +185,7 @@ export function ReviewPanel() {
           Checkout
         </button>
 
-        <button
-          type="button"
-          className="save-link"
-          onClick={() => dispatch({ type: "SAVE" })}
-        >
+        <button type="button" className="save-link" onClick={saveSystem}>
           Save my system for later
         </button>
       </div>

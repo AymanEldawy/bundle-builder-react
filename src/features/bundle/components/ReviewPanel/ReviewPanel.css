@@ -10,6 +10,7 @@
 
 @media (width >= 1024px) {
   .review-panel {
+    gap: 4rem;
     flex-direction: row;
   }
 }
@@ -117,7 +118,7 @@
 .review-right {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 5px 16px;
   flex: 1;
 }
 
@@ -134,11 +135,52 @@
   object-fit: contain;
 }
 
+.guarantee-text {
+  display: none;
+}
+
 .review-totals-right {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 8px;
+}
+
+@media (width >= 1024px) {
+  .review-footer-top {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 16px;
+    align-items: center;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .guarantee-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .guarantee-text strong {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-text);
+  }
+
+  .guarantee-text p {
+    margin: 5px;
+    font-size: 18px;
+    line-height: 1.45;
+    color: var(--color-muted);
+  }
+
+  .review-totals-right {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .review-financing {
@@ -152,23 +194,13 @@
   border-radius: 4px;
   background: var(--color-primary);
   color: #fff;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 500;
 }
 
 .review-total-price {
   display: flex;
   justify-content: flex-end;
-}
-
-.review-total-price .price-active {
-  font-size: 28px;
-  font-family: "Gilroy-Bold", system-ui, sans-serif;
-  color: var(--color-primary);
-  font-weight: bold;
-}
-.review-total-price .price-compare {
-  font-size: 18px;
 }
 
 .review-footer-bottom {
@@ -182,7 +214,7 @@
   margin: 0;
   color: #0aa288;
   font-weight: 600;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: -0.06px;
   text-align: center;
   vertical-align: middle;
@@ -235,11 +267,23 @@
   border-radius: 4px;
 }
 
-.review-panel .price-active,
-.review-panel .price-compare {
+.review-panel .price-active {
   font-size: 14px;
+  color: var(--color-primary);
 }
 
-.review-panel .price-active {
+.review-panel .price-compare {
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.review-total-price .price-active {
+  font-size: 28px;
+  font-family: "Gilroy-Bold", system-ui, sans-serif;
   color: var(--color-primary);
+  font-weight: bold;
+}
+.review-total-price .price-compare {
+  font-size: 18px;
+  color: var(--color-text);
 }
