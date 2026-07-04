@@ -1,0 +1,25 @@
+.builder-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.builder-heading {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  display: none;
+}
+
+.builder-steps {
+  display: flex;
+  flex-direction: column;
+  /* gap: 12px; */
+}
+
+@media (max-width: 575px) {
+  .builder-heading {
+    display: block;
+  }
+}

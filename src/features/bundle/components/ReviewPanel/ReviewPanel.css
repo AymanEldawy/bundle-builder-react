@@ -1,0 +1,245 @@
+.review-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 24px;
+  border-radius: var(--radius-card);
+  background: var(--color-primary-bg);
+  height: fit-content;
+}
+
+@media (width >= 1024px) {
+  .review-panel {
+    flex-direction: row;
+  }
+}
+
+.review-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 4px;
+}
+
+.review-left {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+.review-header {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.review-title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.review-subtitle {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--color-muted);
+}
+
+.review-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ced6de;
+}
+
+.review-group:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.review-group-title {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #a8b2bd;
+}
+
+.review-line {
+  display: grid;
+  grid-template-columns: 40px 2fr 1fr 1fr;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.review-line-thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: #fff;
+}
+
+.shipping-thumb {
+  padding: 6px;
+  object-fit: contain;
+}
+
+.review-line-name {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.review-line-qty {
+  color: var(--color-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.review-line-price {
+  justify-self: end;
+}
+
+.review-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+}
+
+.review-footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+}
+
+.guarantee-badge-bottom {
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.review-totals-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+}
+
+.review-financing {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.financing-pill {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.review-total-price {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.review-total-price .price-active {
+  font-size: 28px;
+  font-family: "Gilroy-Bold", system-ui, sans-serif;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+.review-total-price .price-compare {
+  font-size: 18px;
+}
+
+.review-footer-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.savings-callout {
+  margin: 0;
+  color: #0aa288;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.06px;
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.checkout-button {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.checkout-button:hover {
+  opacity: 0.92;
+}
+
+.save-link {
+  width: 100%;
+  padding: 4px;
+  border: none;
+  background: transparent;
+  color: var(--color-muted);
+  font-size: 14px;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: center;
+  font-style: italic;
+}
+
+.save-link:hover {
+  color: var(--color-text);
+}
+
+.review-panel .quantity-stepper {
+  gap: 10px;
+}
+
+.review-panel .quantity-stepper button {
+  background-color: white;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+.review-panel .price-active,
+.review-panel .price-compare {
+  font-size: 14px;
+}
+
+.review-panel .price-active {
+  color: var(--color-primary);
+}

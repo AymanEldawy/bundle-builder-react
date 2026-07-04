@@ -1,0 +1,47 @@
+.quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+}
+
+.stepper-button {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--color-text);
+  line-height: 1;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 2px solid #c4c4c4;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: bold;
+  width: 30px;
+  height: 30px;
+
+  &:last-child {
+    border: none;
+    background-color: #f0f4f7;
+  }
+}
+
+.stepper-button:hover:not(:disabled) {
+  background: var(--color-primary-bg);
+}
+
+.stepper-button:disabled {
+  color: var(--color-border);
+  cursor: not-allowed;
+}
+
+.stepper-value {
+  min-width: 24px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
