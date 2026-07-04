@@ -1,0 +1,33 @@
+.app {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+@media (width >= 991px) and (width <= 1024px) {
+  .app-layout {
+    grid-template-columns: 1fr 380px;
+  }
+
+  .review-panel {
+    order: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 16px;
+  }
+
+  .app-layout {
+    gap: 24px;
+  }
+}

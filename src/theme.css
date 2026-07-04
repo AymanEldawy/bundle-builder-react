@@ -1,0 +1,40 @@
+:root {
+  --color-primary: #4e2fd2;
+  --color-primary-light: #ede9fe;
+  --color-primary-bg: #edf4ff;
+  --color-text: rgba(31, 31, 31, 1);
+  --color-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-border-selector: rgba(10, 162, 136, 1);
+  --color-red: #dc2626;
+  --radius-card: 12px;
+  --radius-button: 8px;
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --bg-secondary: rgba(31, 31, 31, 1);
+
+  font-family:
+    "Gilroy-SemiBold",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  line-height: 1.5;
+  color: var(--color-text);
+  background: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+}
