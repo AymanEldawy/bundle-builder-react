@@ -9,7 +9,7 @@
 }
 
 .price-compare {
-  color: var(--color-red);
+  color: var(--color-text-secondary);
   text-decoration: line-through;
   letter-spacing: 0.6px;
   text-align: left;

@@ -47,7 +47,12 @@ export function Step({
         <div className="step-status">
           <span className="step-count">{selectedCount} selected</span>
           <span className="step-chevron" aria-hidden="true">
-            ▼
+            <img
+              src="/assets/figma/carrot-up.svg"
+              alt="Chevron"
+              width={14}
+              height={14}
+            />
           </span>
         </div>
       </button>

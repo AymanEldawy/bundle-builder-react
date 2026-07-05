@@ -34,7 +34,7 @@
 }
 
 .step-label {
-  font-size: 11px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -70,7 +70,7 @@
 .step-status {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 4px;
   flex-shrink: 0;
 }
 
@@ -83,7 +83,8 @@
 .step-chevron {
   font-size: 12px;
   color: var(--color-primary);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   transition: transform 0.3s ease-in-out;
 }
 
