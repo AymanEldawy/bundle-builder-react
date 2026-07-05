@@ -136,6 +136,7 @@
   .product-grid > * {
     flex: 0 0 calc(50% - 8px);
     max-width: calc(50% - 8px);
+    min-width: 250px;
   }
 }
 
