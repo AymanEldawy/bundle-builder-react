@@ -9,14 +9,16 @@ import "./ProductCard.css";
 
 interface ProductCardProps {
   product: Product;
+  priority?: boolean;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, priority = false }: ProductCardProps) {
   const { dispatch } = useBundle();
   const activeVariant = getSelectedVariant(product);
   const isSelected = hasSelectedVariants(product);
   const period = product.stepId === "plan" ? "mo" : undefined;
   const productImage = activeVariant.image ?? product.image;
+  const productSizes = activeVariant.sizes ?? product.sizes;
 
   const handleSelectVariant = (variantId: string) => {
     dispatch({
@@ -40,8 +42,14 @@ export function ProductCard({ product }: ProductCardProps) {
       <img
         className="product-image"
         src={productImage}
+        // srcSet={productSrcSet}
+        sizes={productSizes}
         alt={product.title}
-        loading="lazy"
+        loading={priority ? "eager" : "lazy"}
+        width={160}
+        height={160}
+        decoding={priority ? "sync" : "async"}
+        {...(priority ? { fetchPriority: "high" } : {})}
       />
       <h3 className="product-title">{product.title}</h3>
       <p className="product-description">

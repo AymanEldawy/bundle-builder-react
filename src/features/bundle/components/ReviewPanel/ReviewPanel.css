@@ -8,7 +8,7 @@
   height: fit-content;
 }
 
-@media (width >= 1024px) {
+@media (width >= 1199px) {
   .review-panel {
     gap: 4rem;
     flex-direction: row;
@@ -47,7 +47,7 @@
 
 .review-subtitle {
   margin: 0;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1.45;
   color: var(--color-muted);
 }
@@ -126,8 +126,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 16px;
-  border-top: 1px solid var(--color-border);
+  padding-top: 4px;
+  /* border-top: 1px solid var(--color-border); */
 }
 
 .guarantee-badge-bottom {
@@ -146,7 +146,7 @@
   gap: 8px;
 }
 
-@media (width >= 1024px) {
+@media (width >= 1199px) {
   .review-footer-top {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -218,7 +218,7 @@
   letter-spacing: -0.06px;
   text-align: center;
   vertical-align: middle;
-  white-space: nowrap;
+  /* white-space: nowrap; */
 }
 
 .checkout-button {

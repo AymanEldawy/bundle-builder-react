@@ -55,8 +55,12 @@ export function Step({
       <div className="step-content-wrapper">
         <div className="step-content">
           <div className="product-grid">
-            {products.map((product) => (
-              <ProductCard key={product.id} product={product} />
+            {products.map((product, productIndex) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                priority={isExpanded && productIndex === 0}
+              />
             ))}
           </div>
           {nextStepTitle && (

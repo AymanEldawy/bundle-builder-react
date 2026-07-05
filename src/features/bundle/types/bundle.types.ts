@@ -16,6 +16,8 @@ export interface ProductVariant {
   quantity: number;
   swatch?: string;
   image?: string;
+  srcSet?: string;
+  sizes?: string;
 }
 
 export interface Product {
@@ -24,6 +26,8 @@ export interface Product {
   title: string;
   description?: string;
   image: string;
+  srcSet?: string;
+  sizes?: string;
   badge?: string;
   selectedVariantId: string;
   variants: ProductVariant[];

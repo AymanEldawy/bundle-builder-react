@@ -35,9 +35,12 @@ function ReviewLineItem({
       <img
         className="review-line-thumb"
         src={variant.image ?? product.image}
+        srcSet={variant.srcSet ?? product.srcSet}
+        sizes="40px"
         alt=""
         width={40}
         height={40}
+        loading="lazy"
       />
       <div className="review-line-info">
         <span className="review-line-name">{product.title}</span>

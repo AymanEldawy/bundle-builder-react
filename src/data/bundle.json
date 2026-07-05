@@ -36,7 +36,8 @@
       "title": "Wyze Cam v4",
       "description": "The clearest Wyze Cam ever made.",
       "badge": "Save 22%",
-      "image": "/assets/figma/Wyze Cam v4.png",
+      "image": "/assets/figma/Wyze Cam v4.webp",
+      "sizes": "160px",
       "selectedVariantId": "white",
       "variants": [
         {
@@ -46,7 +47,8 @@
           "compareAtPrice": 35.98,
           "quantity": 1,
           "swatch": "https://placehold.co/20x20/ffffff/000000?text=+",
-          "image": "/assets/figma/Wyze Cam v4.png"
+          "image": "/assets/figma/Wyze Cam v4.webp",
+          "sizes": "160px"
         },
         {
           "id": "grey",
@@ -74,7 +76,7 @@
       "title": "Wyze Cam Pan v3",
       "description": "360° pan and 180° tilt security camera.",
       "badge": "Save 12%",
-      "image": "/assets/figma/Wyze Cam Pan v3.svg",
+      "image": "/assets/figma/image.svg",
       "selectedVariantId": "white",
       "variants": [
         {
