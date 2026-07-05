@@ -36,6 +36,7 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
 
   return (
     <article
+      aria-label={product.title}
       className={`product-card ${isSelected ? "product-card-selected" : ""}`}
     >
       {product.badge && <Badge text={product.badge} />}

@@ -6,7 +6,7 @@ A data-driven, multi-step bundle builder prototype built with React, TypeScript,
 
 - **Left column**: A 4-step accordion builder (Cameras → Plan → Sensors → Accessories).
 - **Right column**: A live review panel that reflects the configured system, recalculates totals/savings, and lets the shopper save their configuration.
-- **Persistence**: Clicking "Save my system for later" stores the full configuration in `localStorage`; it is restored on the next visit.
+- **Persistence**: Clicking "Save my system for later" stores product selections in `localStorage`; they are validated and restored on the next visit.
 
 ## Run instructions
 
@@ -37,6 +37,7 @@ The app is served from the Vite dev server (usually http://localhost:5173).
 - **Data-driven**: All products, variants, and default selections live in `src/data/bundle.json`.
 - **State management**: A React `useReducer` inside `BundleProvider` handles every state change. Actions are `SET_VARIANT`, `UPDATE_QUANTITY`, `NEXT_STEP`, `TOGGLE_STEP`, `SAVE`, and `RESTORE`.
 - **Selectors**: Derived state (cart items, totals, savings, selected counts) is computed in `src/features/bundle/state/selectors.ts` and memoized with `useMemo` in components.
+- **Variant quantities**: Each variant tracks its own quantity independently. Switching colors on a product card updates the active variant without resetting the previously selected variant's count, and every selected variant appears as its own line in the review panel.
 - **Variant images**: Each product variant can declare its own `image`; the UI falls back to the product's default image when a variant image is absent.
 - **Feature-based structure**: All bundle-related code is colocated under `src/features/bundle/`.
 - **Component-scoped CSS**: Each major component owns its stylesheet; shared tokens live in `src/theme.css`.
@@ -52,14 +53,11 @@ Rendering from `bundle.json` means the same code powers every step. Adding a new
 ## Tradeoffs
 
 - **Plain CSS**: No Tailwind or CSS-in-JS. This keeps the bundle small and the styling easy to override, but it requires disciplined naming to avoid collisions. Component-scoped files mitigate this.
-- **Unit tests for logic**: Vitest + React Testing Library cover the reducer and selectors in `src/features/bundle/state/__tests__/`. Component and integration tests can be added as the prototype grows.
-- **Product images**: Real Figma assets are copied to `public/assets/figma/` and referenced from `src/data/bundle.json`. `placehold.co` is still used for color swatches and any products without a matching asset.
-- **Design tokens are approximate**: Exact hex values from Figma were not available, so the palette is eyeballed from the screenshots and centralized in CSS variables.
+- **Tests**: Vitest + React Testing Library cover reducers, selectors, persistence, and component/integration flows in `src/features/bundle/state/__tests__/` and `src/features/bundle/components/__tests__/`. The integration suite exercises accordion toggling, quantity sync, variant preservation, and the save flow.
+- **Product images**: Real Figma assets are copied to `public/assets/figma/` and referenced from `src/data/bundle.json`.
 
 ## Future improvements
 
-- Add exact Figma design tokens.
 - Replace `localStorage` with a small backend/API for cross-device saves (the requirements listed this as a bonus).
-- Add component and integration tests for UI interactions.
-- Improve accessibility with focus traps, aria-live regions for totals, and keyboard navigation for the accordion.
+- Add deeper accessibility support: focus traps, focus-visible styles, and keyboard navigation beyond native button behavior.
 - Animate accordion expand/collapse and card selection states.

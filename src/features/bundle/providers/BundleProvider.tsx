@@ -1,30 +1,9 @@
 import { useCallback, useReducer, type ReactNode } from 'react';
-import type { BundleAction, BundleState } from '../types/bundle.types';
+import type { BundleAction } from '../types/bundle.types';
 import { bundleReducer } from '../state/bundleReducer';
 import { seedState } from '../state/initialState';
 import { BundleContext } from './BundleContext';
-
-const STORAGE_KEY = 'bundle-builder-config-v1';
-
-function loadSavedState(): BundleState | null {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) return null;
-    return JSON.parse(raw) as BundleState;
-  } catch {
-    return null;
-  }
-}
-
-function saveState(state: BundleState): boolean {
-  try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    return true;
-  } catch {
-    // Ignore storage errors (e.g. private mode).
-    return false;
-  }
-}
+import { loadSavedState, saveState } from '../state/persistence';
 
 interface BundleProviderProps {
   children: ReactNode;
@@ -33,7 +12,7 @@ interface BundleProviderProps {
 export function BundleProvider({ children }: BundleProviderProps) {
   const [state, dispatch] = useReducer(bundleReducer, seedState, (initial) => {
     if (typeof window === 'undefined') return initial;
-    return loadSavedState() ?? initial;
+    return loadSavedState(initial) ?? initial;
   });
 
   const wrappedDispatch = useCallback(

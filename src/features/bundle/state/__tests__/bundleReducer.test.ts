@@ -46,6 +46,23 @@ describe('bundleReducer', () => {
       const plan = nextState.products.find((p) => p.id === 'cam-unlimited');
       expect(plan?.selectedVariantId).toBe('default');
     });
+
+    it('preserves quantities of previously selected variants', () => {
+      const stateWithWhiteSelected = bundleReducer(mockState, {
+        type: 'UPDATE_QUANTITY',
+        payload: { productId: 'wyze-cam-v4', variantId: 'white', quantity: 2 },
+      });
+
+      const stateAfterSwitchingToBlack = bundleReducer(stateWithWhiteSelected, {
+        type: 'SET_VARIANT',
+        payload: { productId: 'wyze-cam-v4', variantId: 'black' },
+      });
+
+      const camera = stateAfterSwitchingToBlack.products.find((p) => p.id === 'wyze-cam-v4');
+      expect(camera?.selectedVariantId).toBe('black');
+      expect(camera?.variants.find((v) => v.id === 'white')?.quantity).toBe(2);
+      expect(camera?.variants.find((v) => v.id === 'black')?.quantity).toBe(0);
+    });
   });
 
   describe('UPDATE_QUANTITY', () => {

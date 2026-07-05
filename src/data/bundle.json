@@ -46,7 +46,6 @@
           "price": 27.98,
           "compareAtPrice": 35.98,
           "quantity": 1,
-          "swatch": "https://placehold.co/20x20/ffffff/000000?text=+",
           "image": "/assets/figma/Wyze Cam v4.webp",
           "sizes": "160px"
         },
@@ -56,7 +55,6 @@
           "price": 27.98,
           "compareAtPrice": 35.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/d1d5db/000000?text=+",
           "image": "/assets/figma/Wyze Cam v4 gray.svg"
         },
         {
@@ -65,7 +63,6 @@
           "price": 27.98,
           "compareAtPrice": 35.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/111827/ffffff?text=+",
           "image": "/assets/figma/Wyze Cam v4 black.svg"
         }
       ]
@@ -85,7 +82,6 @@
           "price": 34.98,
           "compareAtPrice": 39.98,
           "quantity": 2,
-          "swatch": "https://placehold.co/20x20/ffffff/000000?text=+",
           "image": "/assets/figma/Wyze Cam Pan v3 white.svg"
         },
         {
@@ -94,7 +90,6 @@
           "price": 34.98,
           "compareAtPrice": 39.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/111827/ffffff?text=+",
           "image": "/assets/figma/Wyze Cam Pan v3 black.svg"
         }
       ]
@@ -114,7 +109,6 @@
           "price": 69.98,
           "compareAtPrice": 89.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/ffffff/000000?text=+",
           "image": "/assets/figma/Wyze Cam Floodlight v2 white.svg"
         },
         {
@@ -123,7 +117,6 @@
           "price": 69.98,
           "compareAtPrice": 89.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/111827/ffffff?text=+",
           "image": "/assets/figma/Wyze Cam Floodlight v2 black.svg"
         }
       ]
@@ -152,7 +145,6 @@
           "label": "White",
           "price": 89.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/ffffff/000000?text=+",
           "image": "/assets/figma/Wyze Battery Cam Pro.svg"
         },
         {
@@ -160,7 +152,6 @@
           "label": "Black",
           "price": 89.98,
           "quantity": 0,
-          "swatch": "https://placehold.co/20x20/111827/ffffff?text=+",
           "image": "/assets/figma/Wyze_Battery_Cam_Pro_black.svg"
         }
       ]

@@ -7,16 +7,11 @@ export function bundleReducer(state: BundleState, action: BundleAction): BundleS
       const { productId, variantId } = action.payload;
       return {
         ...state,
-        products: state.products.map((product) => {
-          if (product.id !== productId) return product;
-          return {
-            ...product,
-            selectedVariantId: variantId,
-            variants: product.variants.map((variant) =>
-              variant.id !== variantId ? { ...variant, quantity: 0 } : variant
-            ),
-          };
-        }),
+        products: state.products.map((product) =>
+          product.id === productId
+            ? { ...product, selectedVariantId: variantId }
+            : product
+        ),
       };
     }
 

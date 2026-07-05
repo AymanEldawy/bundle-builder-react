@@ -169,7 +169,11 @@ export function ReviewPanel() {
             <div className="review-financing">
               <span className="financing-pill">as low as ${financing}/mo</span>
             </div>
-            <div className="review-total-price">
+            <div
+              className="review-total-price"
+              aria-live="polite"
+              aria-atomic="true"
+            >
               <Price price={total} compareAtPrice={subtotal} />
             </div>
           </div>
@@ -177,7 +181,7 @@ export function ReviewPanel() {
 
         <div className="review-footer-bottom">
           {savings > 0 && (
-            <p className="savings-callout">
+            <p className="savings-callout" aria-live="polite" aria-atomic="true">
               Congrats! You&apos;re saving ${savings.toFixed(2)} on your
               security bundle!
             </p>
