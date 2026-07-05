@@ -3,7 +3,7 @@ import type { BundleAction, BundleState } from '../types/bundle.types';
 
 export interface BundleContextValue {
   state: BundleState;
-  dispatch: (action: BundleAction) => void;
+  dispatch: (action: BundleAction) => boolean | void;
 }
 
 export const BundleContext = createContext<BundleContextValue | null>(null);

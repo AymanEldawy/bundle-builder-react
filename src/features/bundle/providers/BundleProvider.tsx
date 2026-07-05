@@ -16,11 +16,13 @@ function loadSavedState(): BundleState | null {
   }
 }
 
-function saveState(state: BundleState): void {
+function saveState(state: BundleState): boolean {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    return true;
   } catch {
     // Ignore storage errors (e.g. private mode).
+    return false;
   }
 }
 
@@ -35,10 +37,9 @@ export function BundleProvider({ children }: BundleProviderProps) {
   });
 
   const wrappedDispatch = useCallback(
-    (action: BundleAction) => {
+    (action: BundleAction): boolean | void => {
       if (action.type === 'SAVE') {
-        saveState(state);
-        return;
+        return saveState(state);
       }
       dispatch(action);
     },

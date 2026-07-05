@@ -85,8 +85,12 @@ export function ReviewPanel() {
   }, []);
 
   const saveSystem = useCallback(() => {
-    dispatch({ type: "SAVE" });
-    alert("System saved successfully!");
+    const success = dispatch({ type: "SAVE" });
+    alert(
+      success
+        ? "System saved successfully!"
+        : "Unable to save your system. Please try again."
+    );
   }, [dispatch]);
 
   return (

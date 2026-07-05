@@ -16,8 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const activeVariant = getSelectedVariant(product);
   const isSelected = hasSelectedVariants(product);
   const period = product.stepId === "plan" ? "mo" : undefined;
-  // const productImage = activeVariant.image ?? product.image;
-  const productImage = product.image;
+  const productImage = activeVariant.image ?? product.image;
 
   const handleSelectVariant = (variantId: string) => {
     dispatch({
