@@ -55,9 +55,3 @@ Rendering from `bundle.json` means the same code powers every step. Adding a new
 - **Plain CSS**: No Tailwind or CSS-in-JS. This keeps the bundle small and the styling easy to override, but it requires disciplined naming to avoid collisions. Component-scoped files mitigate this.
 - **Tests**: Vitest + React Testing Library cover reducers, selectors, persistence, and component/integration flows in `src/features/bundle/state/__tests__/` and `src/features/bundle/components/__tests__/`. The integration suite exercises accordion toggling, quantity sync, variant preservation, and the save flow.
 - **Product images**: Real Figma assets are copied to `public/assets/figma/` and referenced from `src/data/bundle.json`.
-
-## Future improvements
-
-- Replace `localStorage` with a small backend/API for cross-device saves (the requirements listed this as a bonus).
-- Add deeper accessibility support: focus traps, focus-visible styles, and keyboard navigation beyond native button behavior.
-- Animate accordion expand/collapse and card selection states.
